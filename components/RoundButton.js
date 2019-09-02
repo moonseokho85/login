@@ -2,9 +2,9 @@ import React,{Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 
-export default class RoundButton extends Component {\
+export default class RoundButton extends Component {
 
-    static defaultProps = {
+    static defaultProps = { 
         title:'Button',
         onPress:()=>{},
         color:'white'
@@ -12,9 +12,22 @@ export default class RoundButton extends Component {\
 
     render(){
         return(
-            <View>
-
+            <TouchableOpacity 
+            style={[styles.touchWrap , this.props.style]}
+            onPress ={this.props.onPress}
+            >
+            <View style={styles.container}>
+                {this.props.icoName && (
+                    <Ionicons 
+                        style={{marginRight :10}}
+                        name={this.props.icoName}
+                        color ={this.props.color}
+                        size={25}
+                    />
+                )}
+                <Text style={styles.title}>{this.props.title}</Text>
             </View>
+            </TouchableOpacity>
         )
     }
 }
