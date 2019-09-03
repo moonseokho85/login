@@ -43,6 +43,7 @@ export default class IconTextInput extends Component {
 
 const styles = StyleSheet.create({
     container:{
+        marginTop:10,
         height:50,
         flexDirection:'row',
         borderColor:'#aaa',

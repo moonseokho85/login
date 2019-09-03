@@ -29,7 +29,7 @@ export default class LoginScreen extends Component {
                    CAR AUTION
                 </Text>
                 <IconTextInput 
-                    style={{marginTop :10}}
+                    style={{marginTop :10 , marginBottom : 20}}
                     iconName='ios-person'
                     placeholder = "아이디"
                 />
