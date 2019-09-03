@@ -11,6 +11,7 @@ import LoginScreen from './screens/LoginScreen';
 import {createStackNavigator} from 'react-navigation-stack'
 import {createBottomTabNavigator} from 'react-navigation-tabs'
 import {createAppContainer,} from 'react-navigation';
+import RegisterUserScreen from './screens/RegisterUserScreen';
 
 
 const defaultNavigationOptions = {
@@ -105,6 +106,7 @@ const RootStack = createStackNavigator(
    ListingEditorStack,
    VehicleEditorStack,
    Login: LoginScreen,
+   Register : RegisterUserScreen
  },
  {
    mode: 'modal',

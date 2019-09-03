@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet,KeyboardAvoidingView , Alert } from 'react-native'
 import IconTextInput from '../components/IconTextInput'
 import RoundButton from '../components/RoundButton'
+import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
 
 
 export default class LoginScreen extends Component {
@@ -40,22 +41,41 @@ export default class LoginScreen extends Component {
                 />
                 <RoundButton 
                     style={{marginTop:10}}
-                    title = {'회원가입 / 로그인'}
+                    title = {'로그인'}
+                    onPress = {()=>{
+                        this.props.navigation.navigate('Home')
+                    }}
+                
+                />
+
+                <GoogleSigninButton
+                    style={{ width: 192, height: 48 }}
+                    size={GoogleSigninButton.Size.Wide}
+                    color={GoogleSigninButton.Color.Dark}
+                    onPress={this._signIn}
+                    disabled={this.state.isSigninInProgress} 
+                />
+
+                <RoundButton 
+                    style={{marginTop:10}}
+                    title = {'회원가입'}
                     onPress = {()=>{
                         Alert.alert(
-                            'Alert Title',
-                            'My Alert Msg',
+                            '주의',
+                            '회원가입을 정말 하시겠습니까?',
                             [
-                                {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-                                {
+                              {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+                              {
                                 text: 'Cancel',
                                 onPress: () => console.log('Cancel Pressed'),
                                 style: 'cancel',
-                                },
-                                {text: 'OK', onPress: () => console.log('OK Pressed')},
+                              },
+                              {text: 'OK', onPress: () => {
+                                this.props.navigation.navigate('Register')
+                              }},
                             ],
                             {cancelable: false},
-                        )
+                          );
                     }}
                 
                 />
