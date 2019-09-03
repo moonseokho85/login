@@ -5,7 +5,7 @@ export default class AuctionListScreen extends Component {
     render() {
         return (
             <View>
-                <Text> textInComponent </Text>
+                <Text> AuctionListScreen </Text>
             </View>
         )
     }

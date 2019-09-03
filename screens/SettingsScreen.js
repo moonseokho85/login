@@ -5,7 +5,7 @@ export default class SettingsScreen extends Component {
     render() {
         return (
             <View>
-                <Text> textInComponent </Text>
+                <Text> SettingsScreen </Text>
             </View>
         )
     }

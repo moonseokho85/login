@@ -5,7 +5,7 @@ export default class VehicleEditorScreen extends Component {
     render() {
         return (
             <View>
-                <Text> textInComponent </Text>
+                <Text> VehicleEditorScreen </Text>
             </View>
         )
     }
